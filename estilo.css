@@ -1,0 +1,656 @@
+﻿
+*{ box-sizing: border-box; }
+
+html, body {
+    margin: 0;
+    padding: 0px;
+    background-color: black;
+    color: white;
+    font-size: 30px;
+    font-family: "Syne", sans-serif;
+    position: relative;
+    top: 0px;
+    z-index: 1;
+}
+
+section {
+    
+    min-height: calc(100vh - 100px);
+    padding-top: 100px; /* ou considerar com scroll snap */
+}
+
+section.about, section.contato {
+    min-height: calc(100vh - 100px);
+    padding-top: 100px; /* ou considerar com scroll snap */
+    padding-right: 50px;
+    padding-left: 50px;
+}
+  
+article {
+    display: flex;
+    width: 100%;
+    height: calc(100vh - 100px);
+    flex-direction: row;
+    flex-wrap: nowrap;    
+}
+
+article.sticky {
+    position: sticky;
+}
+
+    article.full-screen {
+        width: 100%;
+        height: calc(100vh - 350px);
+        top: 0;
+        margin-top: 0;
+        z-index: 3;
+    }
+
+
+
+    div.image img {
+        width: 100%;
+        height: calc(100vh - 100px);
+        border-radius: 100px;
+    }
+
+figure {
+    display: flex;
+    font-size: 15px;
+}
+
+h1 {
+    font-size: 50px;
+    color: white;
+    text-align: center;
+}
+
+h2 {
+    font-size: 30px;
+    color: white;
+    text-align: center;
+}
+
+p {
+    font-size: 30px;
+    color: white;
+    text-align: center;
+    line-break: anywhere;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    font-family: "Space Mono", monospace;
+    font-size: 15px;
+}
+
+div.animacao_livro {
+    text-align: center;
+    align-content: center;
+}
+
+    div.animacao_livro img {
+        width: 200px;
+        height: 200px;
+        animation: giroCiclado 6s ease-in-out infinite;
+    }
+
+@keyframes giroCiclado {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    30% {
+        transform: rotate(15deg); /* leve giro */
+    }
+
+    60% {
+        transform: rotate(0deg); /* volta ao centro */
+    }
+
+    90% {
+        transform: rotate(-360deg); /* giro completo rápido */
+    }
+
+    100% {
+        transform: rotate(0deg); /* volta de novo */
+    }
+}
+
+
+
+
+    /* navigation */
+    nav {
+        position: fixed;
+        width: 100%;
+        height: 100px;
+        top: 0;
+        left: 50px;
+        font-size: 20px;
+        z-index: 2;
+        background-color: black;
+    }
+
+    nav ul {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        margin: auto;
+        padding: 0;
+    }
+
+        nav ul li {
+            list-style: none;
+            margin-left: 45px;
+        }
+
+            nav ul li a {
+                color: white;
+                font-family: "Space Mono", monospace;
+            }
+
+/* Sessão "Sobre" */
+
+article div.image {
+    flex-basis: 37.5vw;
+    border-radius: 100px;
+}
+
+article div.text_about {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 100px);
+}
+
+    article div.text_about h1 {
+        flex: 1;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-start;
+        padding: 3.125vw;
+        /*background-color: #00ffff;*/
+        border-radius: 100px;
+        color: white;
+        margin: 0;
+    }
+
+article div.description {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /*background-color: #ff006e;*/
+    border-radius: 100px;
+    padding: 3.125vw;
+    color: white;
+}
+
+/* Sessão "Projetos em educação" */
+
+section.projetos {
+    display: flex;
+    width: 100%;
+    height: calc(300vh - 100px);
+    flex-direction: column;
+}
+
+article.projetos_titulo {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    width: 100%;
+    height: 100vh;
+    /*background-color: #F9CA24;*/
+    color: #F9CA24;
+    border-radius: 100px;
+}
+
+    article.projetos_titulo h1, /* Se o título "Projeto" for um h1 */
+    article.projetos_titulo h2, /* Se for um h2 */
+    article.projetos_titulo h3, /* Se for um h3 */
+    article.projetos_titulo p, /* Se for um parágrafo */
+    article.projetos_titulo span { /* Se for um span */
+        color: var(--cor-amarelo-ouro); /* Define a cor para amarelo ouro */
+    }
+
+article.educacao {
+    /*flex-basis: 37.5vw;*/
+    flex: 10;
+    display: flex;
+    flex-direction: row;
+    padding: 50px;
+    border-radius: 100px;
+}
+
+div.animacao_livro {
+    /*flex-basis: 37.5vw;*/
+    width: 100%;
+    height: calc(100vh - 215px);
+    flex: 1;
+    background-color: #FF6B6B;
+    border-radius: 100px;
+}
+
+div.sobre_educacao {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    border-radius: 100px;
+}
+
+article.educacao div.sobre_educacao div.titulo {
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 3.125vw;
+    /*background-color: #808080;*/
+    border-radius: 100px;
+    color: #F9CA24;
+    margin: 0;
+}
+
+article.educacao div.sobre_educacao div.descricao {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    /*background-color: #b200ff;*/
+    border-radius: 100px;
+    padding: 3.125vw;
+    color: white;
+}
+
+/* Sessão "Projetos em desenvolvimento" */
+
+article.desenvolvimento {
+    /*flex-basis: 37.5vw;*/
+    flex: 10;
+    display: flex;
+    flex-direction: row;
+    padding: 50px;
+    border-radius: 100px;
+}
+
+div.animacao_pc {
+    /*flex-basis: 37.5vw;*/
+    width: 100%;
+    height: calc(100vh - 215px);
+    flex: 1;
+    background-color: #64FFDA;
+    border-radius: 100px;
+}
+
+div.sobre_desenvolvimento {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    border-radius: 100px;
+}
+
+div.titulo_dev {
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: 3.125vw;
+    /*background-color: #00ffff;*/
+    border-radius: 100px;
+    color: #FF6B6B;
+    margin: 0;
+}
+
+div.descricao_dev {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /*background-color: #ff006e;*/
+    border-radius: 100px;
+    padding: 3.125vw;
+    color: white;
+}
+
+/* Sessão "Projetos em recreação" */
+
+article.recreacao {
+    /*flex-basis: 37.5vw;*/
+    flex: 10;
+    display: flex;
+    flex-direction: row;
+    padding: 50px;
+    border-radius: 100px;
+}
+
+div.animacao_gol {
+    /*flex-basis: 37.5vw;*/
+    width: 100%;
+    height: calc(100vh - 215px);
+    flex: 1;
+    background-color: #F9CA24;
+    border-radius: 100px;
+}
+
+div.sobre_recreacao {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    border-radius: 100px;
+}
+
+div.titulo_recreacao {
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 3.125vw;
+    /*background-color: #ffd800;*/
+    border-radius: 100px;
+    color: #64FFDA;
+    margin: 0;
+}
+
+div.descricao_recreacao {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    /*background-color: #b6ff00;*/
+    border-radius: 100px;
+    padding: 3.125vw;
+    color: white;
+}
+
+/* Sessão "Contato" */
+
+section#contato {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+}
+
+article.contato {
+    display: block;
+    align-content: end;
+   /* background-color: aliceblue;*/
+    border-radius: 100px;
+    border-radius: 100px;
+}
+
+div.titulo_contato {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    /*background-color: #F9CA24;*/
+    color: #F9CA24;
+    border-radius: 100px;
+}
+
+section#contato div.titulo_contato h2, /* Se o título "Contato" for um h2 dentro da div */
+section#contato div.titulo_contato h1, /* Ou se for um h1 */
+section#contato div.titulo_contato h3, /* Ou um h3 */
+section#contato div.titulo_contato p, /* Ou até mesmo um parágrafo (se for o caso) */
+section#contato div.titulo_contato span { /* Ou um span */
+    color: var(--cor-amarelo-ouro) !important; /* Define o amarelo e usa !important para forçar a aplicação */
+}
+
+div.descricao_contato {
+    flex: 9;
+    display: flex;
+    align-content: flex-end;
+    flex-direction: column;
+    /*background-color: midnightblue;*/
+    border-radius: 100px;
+}
+
+div.texto_descricao_contato {
+    flex: 1;
+    justify-content: center;
+    background-color: #64FFDA;
+    /*border-radius: 100px;*/
+}
+
+div.logo_redesocial {
+    flex: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    /*background-color: darkslateblue;*/
+    border-radius: 100px;
+}
+
+/* responsive */
+
+@media only screen and (max-width: 768px) {
+    * {
+        border-radius: 25px !important;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    h4 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 15px;
+    }
+
+    nav ul li {
+        margin-left: 13.5px;
+    }
+
+    article {
+        flex-direction: column;
+    }
+
+    div.titulo {
+        width: 100vw;
+        padding: 5px 10px;
+        font-size: 25px;
+        text-align: center;
+        margin: 0 auto;
+        border-radius: 10px;
+        background-color: #f5f5f5;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    article {
+        flex-direction: column;
+    }
+
+    * .animacao_gol, .animacao_pc, .animacao_livro {
+        display: none;
+    }
+
+    article.educacao,
+    article.desenvolvimento,
+    article.recreacao {
+        flex-direction: column;
+        height: auto;
+    }
+
+    div.animacao_livro,
+    div.animacao_pc,
+    div.animacao_gol {
+        height: 50vh;
+    }
+
+    div.sobre_educacao,
+    div.sobre_desenvolvimento,
+    div.sobre_recreacao {
+        height: auto;
+    }
+
+    section {
+        position: relative;
+        width: 100%;
+        min-height: 100vh; /* garante que a section ocupe a tela */
+        overflow: hidden;
+    }
+
+    article.educador {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 2rem;
+        text-align: center;
+    }
+
+
+
+    #about {
+        display: flex;
+        justify-content: center; /* Centraliza a imagem horizontalmente */
+        align-items: center; /* Centraliza a imagem verticalmente */
+        height: 100vh; /* A altura da seção ocupa 100% da tela */
+    }
+
+        #about img {
+            height: 56vh; /* Limita a altura da imagem para 60% da altura da tela */
+            width: 100%; /* Faz a largura da imagem ocupar 100% do espaço disponível */
+            object-fit: cover; /* Faz a imagem preencher o espaço disponível, cortando-a se necessário */
+        }
+
+    #about {
+        background-color: transparent; /* ou simplesmente remova essa linha se existir */
+    }
+
+    #contato {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        padding: 2rem;
+        text-align: center;
+    }
+
+        #contato > * {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+    .redes-sociais {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 0;
+        margin-top: 2rem;
+    }
+
+        .redes-sociais li {
+            list-style: none;
+        }
+
+            .redes-sociais li a {
+                font-size: 1rem;
+            }
+
+    .logo_redesocial {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        margin-top: 2rem;
+    }
+
+        .logo_redesocial a {
+            display: block; /* Faz com que o link ocupe uma linha inteira */
+            text-align: center;
+            text-decoration: none;
+            color: #000;
+        }
+
+            .logo_redesocial a img {
+                display: block;
+                margin: 0 auto 0.5rem auto;
+                width: 40px;
+                height: 40px;
+                object-fit: contain;
+            }
+
+    /* Alinhar todos os itens da seção de contato verticalmente */
+    .contato {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    /* Alteração aqui para garantir que as redes sociais fiquem empilhadas */
+    .logo_redesocial {
+        display: flex;
+        flex-direction: column; /* Alterar para coluna */
+        align-items: center;
+        gap: 0.05rem; /* Espaçamento entre as redes sociais */
+        margin-top: 2rem;
+    }
+
+        .logo_redesocial a {
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            color: #000;
+        }
+
+            /* Ajustes nas imagens para ficarem com o tamanho correto e centralizadas */
+            .logo_redesocial a img {
+                display: block;
+                margin: 0 auto 0.5rem auto;
+                width: 50px;
+                height: 50px;
+                object-fit: contain;
+            }
+
+    .logo_redesocial {
+        margin-top: 0;
+    }
+
+    div.titulo_contato {
+        background-color: transparent; /* Remove a cor de fundo */
+    }
+
+    /* serviços de animação */
+
+    .ted {
+        animation: arrive 2s ease-out forwards;
+        display: inline-block;
+        font-size: 24px;
+        margin: 50px;
+        opacity: 0; /* Defina a opacidade inicial como 0 */
+    }
+
+    @keyframes arrive {
+        0% {
+            transform: translateX(-20px);
+            opacity: 0; /* Garanta que a opacidade inicial da animação também seja 0 */
+        }
+
+        100% {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    /* Sessão Educação */
+

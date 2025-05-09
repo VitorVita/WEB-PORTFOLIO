@@ -1,0 +1,26 @@
+﻿html, body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
+
+.ted {
+    animation: arrive 2s ease-out forwards;
+    display: inline-block;
+    font-size: 24px;
+    margin: 50px;
+    opacity: 0;
+    color: white; /* Adicionei cor para garantir que o texto seja visível no final */
+}
+
+@keyframes arrive {
+    0% {
+        transform: translateX(-20px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}

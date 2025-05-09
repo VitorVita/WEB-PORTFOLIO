@@ -1,0 +1,387 @@
+﻿/* ============================
+   RESET E CONFIGURAÇÕES GERAIS
+   ============================ */
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: white;
+    font-size: 30px;
+    font-family: 'Times New Roman';
+    position: relative;
+    top: 0;
+    z-index: 1;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    font-family: monospace;
+}
+
+/* ============================
+   TIPOGRAFIA
+   ============================ */
+
+h1 {
+    font-size: 50px;
+    color: white;
+    text-align: center;
+}
+
+h2 {
+    font-size: 30px;
+    color: white;
+    text-align: center;
+}
+
+p {
+    font-size: 30px;
+    color: white;
+    text-align: center;
+    line-break: anywhere;
+}
+
+figure {
+    display: flex;
+    font-size: 15px;
+}
+
+/* ============================
+   NAVEGAÇÃO
+   ============================ */
+
+nav {
+    position: fixed;
+    width: 100%;
+    height: 100px;
+    top: 0;
+    left: 0;
+    font-size: 20px;
+    z-index: 2;
+    background-color: black;
+}
+
+    nav ul {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        margin: auto;
+        padding: 0;
+    }
+
+        nav ul li {
+            list-style: none;
+            margin-left: 45px;
+        }
+
+            nav ul li a {
+                color: white;
+                font-family: monospace;
+            }
+
+/* ============================
+   ESTRUTURA GERAL
+   ============================ */
+
+section {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+}
+
+article {
+    display: flex;
+    width: 100%;
+    height: calc(100vh - 100px);
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+    article.sticky {
+        position: sticky;
+    }
+
+    article.full-screen {
+        width: 100%;
+        height: calc(100vh - 350px);
+        top: 0;
+        margin-top: 0;
+        z-index: 3;
+    }
+
+div {
+    display: flex;
+    align-content: flex-end;
+}
+
+    div.image img {
+        width: 100%;
+        height: calc(100vh - 100px);
+        border-radius: 100px;
+    }
+
+/* ============================
+   SEÇÃO SOBRE
+   ============================ */
+
+article div.image {
+    flex-basis: 37.5vw;
+    background-color: #b6ff00;
+    border-radius: 100px;
+    margin-top: 100px;
+}
+
+article div.text_about {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 100px);
+    margin-top: 100px;
+}
+
+    article div.text_about h1 {
+        flex: 1;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-start;
+        padding: 3.125vw;
+        background-color: #00ffff;
+        border-radius: 100px;
+        color: white;
+        margin: 0;
+    }
+
+article div.description {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #ff006e;
+    border-radius: 100px;
+    padding: 3.125vw;
+    color: white;
+}
+
+/* ============================
+   SEÇÃO PROJETOS EM EDUCAÇÃO
+   ============================ */
+
+section.projetos {
+    display: flex;
+    width: 100%;
+    height: calc(300vh - 100px);
+    flex-direction: column;
+    margin-top: 100px;
+}
+
+article.projetos_titulo {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    width: 100%;
+    height: 100vh;
+    background-color: blue;
+    border-radius: 100px;
+}
+
+article.educacao {
+    flex: 10;
+    display: flex;
+    flex-direction: row;
+    border-radius: 100px;
+}
+
+div.animacao_livro {
+    width: 100%;
+    height: calc(108.5vh - 100px);
+    flex: 1;
+    background-color: #0026ff;
+    border-radius: 100px;
+}
+
+div.sobre_educacao {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    border-radius: 100px;
+}
+
+article.educacao div.sobre_educacao div.titulo {
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 3.125vw;
+    background-color: #808080;
+    border-radius: 100px;
+    color: white;
+    margin: 0;
+}
+
+article.educacao div.sobre_educacao div.descricao {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    background-color: #b200ff;
+    border-radius: 100px;
+    padding: 3.125vw;
+    color: white;
+}
+
+/* ============================
+   SEÇÃO PROJETOS EM DESENVOLVIMENTO
+   ============================ */
+
+article.desenvolvimento {
+    flex: 10;
+    display: flex;
+    flex-direction: row;
+    border-radius: 100px;
+}
+
+div.animacao_pc {
+    width: 100%;
+    height: calc(108.5vh - 100px);
+    flex: 1;
+    background-color: darkred;
+    border-radius: 100px;
+}
+
+div.sobre_desenvolvimento {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    border-radius: 100px;
+}
+
+div.titulo_dev {
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: 3.125vw;
+    background-color: #00ffff;
+    border-radius: 100px;
+    color: white;
+    margin: 0;
+}
+
+div.descricao_dev {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #ff006e;
+    border-radius: 100px;
+    padding: 3.125vw;
+    color: white;
+}
+
+/* ============================
+   SEÇÃO PROJETOS EM RECREAÇÃO
+   ============================ */
+
+article.recreacao {
+    flex: 10;
+    display: flex;
+    flex-direction: row;
+    border-radius: 100px;
+}
+
+div.animacao_gol {
+    width: 100%;
+    height: calc(100vh - 100px);
+    flex: 1;
+    background-color: #00ffff;
+    border-radius: 100px;
+}
+
+div.sobre_recreacao {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    border-radius: 100px;
+}
+
+div.titulo_recreacao {
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 3.125vw;
+    background-color: #ffd800;
+    border-radius: 100px;
+    color: white;
+    margin: 0;
+}
+
+div.descricao_recreacao {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    background-color: #b6ff00;
+    border-radius: 100px;
+    padding: 3.125vw;
+    color: white;
+}
+
+/* ============================
+   SEÇÃO CONTATO
+   ============================ */
+
+section#contato {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+}
+
+article.contato {
+    display: block;
+    align-content: end;
+    background-color: aliceblue;
+    border-radius: 100px;
+    margin-top: 100px;
+}
+
+div.titulo_contato {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    background-color: aquamarine;
+    border-radius: 100px;
+}
+
+div.descricao_contato {
+    flex: 9;
+    flex-direction: column;
+    background-color: midnightblue;
+    border-radius: 100px;
+}
+
+div.texto_descricao_contato {
+    flex: 1;
+    justify-content: center;
+    background-color: red;
+    border-radius: 100px;
+}
+
+div.logo_redesocial {
+    flex: 2;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    background-color: darkslateblue;
+    border-radius: 100px;
+}

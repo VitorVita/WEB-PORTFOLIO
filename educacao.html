@@ -1,0 +1,210 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Educação</title>
+    <link rel="stylesheet" href="estilo.css" />
+</head>
+
+<!--<header>
+    <h1>Educação</h1>
+    <nav>
+        <a href="#arte-educacao">Arte-Educação</a>
+        <a href="#divulgacao">Divulgação Científica</a>
+        <a href="#mediacao">Mediação Cultural</a>
+    </nav>
+</header>-->
+
+<main>
+    <section id="sobre">...</section>
+    <section id="projetos">...</section>
+</main>
+
+
+<style>
+    body {
+        background-color: #121212;
+        font-family: Arial, sans-serif;
+        color: #fff;
+        margin: 0;
+        padding: 20px;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 20px;
+    }
+
+    .caixa {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #3c2b2b;
+        border-radius: 15px;
+        padding: 30px;
+        text-align: center;
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+    }
+
+        .caixa:hover {
+            background-color: #ff4c4c;
+            cursor: pointer;
+        }
+</style>
+
+<body>
+    <main class="grid-container" id="caixa-container">
+        <a class="caixa" href="#">Sobre</a>
+        <a class="caixa" href="#">Projetos</a>
+        <a class="caixa" href="#">Contato</a>
+        <a class="caixa" href="#">Instagram</a>
+        <a class="caixa" href="#">Idade</a>
+        <a class="caixa" href="#">Esposa</a>
+        <a class="caixa" href="#">Daredevil</a>
+        <a class="caixa" href="#">Born Again</a>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+<footer>
+    <p>Feito com 💙 por Vitor • © 2025</p>
+</footer>
+
+<script>
+
+    window.addEventListener("DOMContentLoaded", () => {
+        const container = document.getElementById("caixa-container");
+        const caixas = Array.from(container.children);
+
+        // Embaralha a ordem das caixas
+        for (let i = caixas.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [caixas[i], caixas[j]] = [caixas[j], caixas[i]];
+        }
+
+        // Remove todas e reanexa na nova ordem
+        caixas.forEach(caixa => container.appendChild(caixa));
+    });
+
+
+</script>
+
+<!--<body>
+    <section>
+        <article>
+            <div>Educação</div>
+            <nav>
+                <ul>
+                    <li>Arte-Educação</li>
+                    <li>Divulgação Científica</li>
+                    <li>Mediação Cultural</li>
+                </ul>
+            </nav>
+            <img src="foto1.jpg" alt="Foto 1">
+            <img src="foto2.jpg" alt="Foto 2">
+            <img src="foto3.jpg" alt="Foto 3">
+        </article>
+    </section>-->
+<!--<style>
+    body {
+        margin: 0;
+        background: #f0f0f0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    canvas {
+        background: #ffffff;
+        border: 1px solid #ccc;
+    }
+</style>
+</head>
+<body>
+    <canvas id="canvas" width="400" height="400"></canvas>
+
+    <script>
+        const canvas = document.getElementById("canvas");
+        const ctx = canvas.getContext("2d");
+
+        // Livro
+        let book = {
+            x: 170,
+            y: 0,
+            width: 60,
+            height: 70,
+            speedY: 0,
+            gravity: 0.2,
+            bounce: -0.2,
+            ground: 330,
+            opened: false,
+            openingProgress: 0 // 0 a 1
+        };
+
+        function drawClosedBook(x, y, width, height) {
+            ctx.fillStyle = "#8b4513"; // capa marrom
+            ctx.fillRect(x, y, width, height);
+
+            ctx.fillStyle = "#f5deb3"; // páginas
+            ctx.fillRect(x + 5, y + 5, width - 10, height - 10);
+        }
+
+        function drawOpenedBook(x, y, width, height, progress) {
+            const leftPageWidth = width / 2 * progress;
+            const rightPageWidth = width / 2 * progress;
+
+            // Lado esquerdo abrindo
+            ctx.fillStyle = "#ffffff"; // página
+            ctx.fillRect(x - leftPageWidth, y, leftPageWidth, height);
+
+            // Lado direito abrindo
+            ctx.fillRect(x + width, y, rightPageWidth, height);
+
+            // Capa no centro
+            ctx.fillStyle = "#8b4513"; // lombada
+            ctx.fillRect(x, y, width, height);
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            if (!book.opened) {
+                // Queda
+                book.speedY += book.gravity;
+                book.y += book.speedY;
+
+                if (book.y > book.ground) {
+                    book.y = book.ground;
+                    book.speedY *= book.bounce;
+
+                    if (Math.abs(book.speedY) < 0.2) {
+                        book.speedY = 0;
+                        book.opened = true; // começa a abrir
+                    }
+                }
+
+                drawClosedBook(book.x, book.y, book.width, book.height);
+            } else {
+                // Abrindo lentamente
+                if (book.openingProgress < 1) {
+                    book.openingProgress += 0.01;
+                }
+
+                drawOpenedBook(book.x, book.y, book.width, book.height, book.openingProgress);
+            }
+
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+    </script>-->
+</body>
+<!--</body>-->
+</html>

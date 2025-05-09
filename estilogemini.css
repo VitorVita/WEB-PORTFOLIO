@@ -1,0 +1,471 @@
+﻿/* Variáveis de cores */
+:root {
+    --cor-principal-fundo: black;
+    --cor-texto-principal: white;
+    --cor-destaque-ciano: #00ffff;
+    --cor-destaque-rosa: #ff006e;
+    --cor-secundaria-azul: blue;
+    --cor-terciaria-cinza: #808080;
+    --cor-quartenaria-roxo: #b200ff;
+    --cor-animacao-livro: #0026ff;
+    --cor-animacao-pc: darkred;
+    --cor-animacao-gol: #00ffff; /* Mesmo que --cor-destaque-ciano */
+    --cor-titulo-recreacao: #ffd800;
+    --cor-descricao-recreacao: #b6ff00;
+    --cor-fundo-contato: midnightblue;
+    --cor-texto-contato: red;
+    --cor-link-rodape: #000;
+}
+
+/* Estilos globais */
+* {
+    box-sizing: border-box;
+    border-radius: 25px !important; /* Adicionado para mobile-first e sobrescrito no desktop */
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--cor-principal-fundo);
+    color: var(--cor-texto-principal);
+    font-size: 30px;
+    font-family: "Syne", sans-serif;
+    position: relative;
+    top: 0;
+    z-index: 1;
+}
+
+/* Tipografia */
+h1 {
+    font-size: 50px;
+    text-align: center;
+    color: var(--cor-texto-principal);
+}
+
+h2,
+p {
+    font-size: 30px;
+    text-align: center;
+    color: var(--cor-texto-principal);
+}
+
+a {
+    color: var(--cor-texto-principal);
+    text-decoration: none;
+    font-family: "Space Mono", monospace;
+    font-size: 15px;
+}
+
+figure {
+    display: flex;
+    font-size: 15px;
+}
+
+/* Navegação */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    font-size: 20px;
+    z-index: 2;
+    background-color: var(--cor-principal-fundo);
+}
+
+    nav ul {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        margin: auto;
+        padding: 0;
+    }
+
+        nav ul li {
+            list-style: none;
+            margin-left: 45px;
+        }
+
+            nav ul li a {
+                color: var(--cor-texto-principal);
+            }
+
+/* Seções */
+section {
+    min-height: calc(100vh - 100px);
+    padding-top: 100px; /* Considerar com scroll snap */
+    display: flex;
+    flex-direction: column; /* Padrão para mobile */
+    width: 100%;
+}
+
+/* Artigos (Containers de conteúdo) */
+article {
+    display: flex;
+    width: 100%;
+    height: calc(100vh - 100px);
+    flex-direction: row;
+    flex-wrap: nowrap;
+    border-radius: 100px;
+}
+
+    article.sticky {
+        position: sticky;
+    }
+
+    article.full-screen {
+        height: calc(100vh - 350px);
+        top: 0;
+        margin-top: 0;
+        z-index: 3;
+    }
+
+/* Imagens */
+div.image img {
+    width: 100%;
+    height: calc(100vh - 100px);
+    border-radius: inherit; /* Herda o border-radius do article */
+    object-fit: cover; /* Garante que a imagem cubra o espaço */
+}
+
+/* Seção "Sobre" */
+article.sobre div.image {
+    flex-basis: 37.5vw;
+}
+
+article.sobre div.text_about {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 100px);
+}
+
+    article.sobre div.text_about h1 {
+        flex: 1;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-start;
+        padding: 3.125vw;
+        background-color: var(--cor-destaque-ciano);
+        color: var(--cor-texto-principal);
+        margin: 0;
+        border-radius: inherit;
+    }
+
+article.sobre div.description {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: var(--cor-destaque-rosa);
+    padding: 3.125vw;
+    color: var(--cor-texto-principal);
+    border-radius: inherit;
+}
+
+/* Seção "Projetos" - Título */
+article.projetos_titulo {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 100vh;
+    background-color: var(--cor-secundaria-azul);
+}
+
+/* Seção "Projetos em educação" */
+article.educacao {
+    flex: 10;
+}
+
+    article.educacao div.animacao_livro {
+        flex: 1;
+        height: calc(100vh - 100px);
+        background-color: var(--cor-animacao-livro);
+    }
+
+    article.educacao div.sobre_educacao {
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+    }
+
+        article.educacao div.sobre_educacao div.titulo {
+            flex: 1;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-end;
+            padding: 3.125vw;
+            background-color: var(--cor-terciaria-cinza);
+            color: var(--cor-texto-principal);
+            margin: 0;
+            border-radius: inherit;
+        }
+
+        article.educacao div.sobre_educacao div.descricao {
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            background-color: var(--cor-quartenaria-roxo);
+            padding: 3.125vw;
+            color: var(--cor-texto-principal);
+            border-radius: inherit;
+        }
+
+/* Seção "Projetos em desenvolvimento" */
+article.desenvolvimento {
+    flex: 10;
+}
+
+    article.desenvolvimento div.animacao_pc {
+        flex: 1;
+        height: calc(100vh - 100px);
+        background-color: var(--cor-animacao-pc);
+    }
+
+    article.desenvolvimento div.sobre_desenvolvimento {
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+    }
+
+        article.desenvolvimento div.sobre_desenvolvimento div.titulo_dev {
+            flex: 1;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-start;
+            padding: 3.125vw;
+            background-color: var(--cor-destaque-ciano);
+            color: var(--cor-texto-principal);
+            margin: 0;
+            border-radius: inherit;
+        }
+
+        article.desenvolvimento div.sobre_desenvolvimento div.descricao_dev {
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            background-color: var(--cor-destaque-rosa);
+            padding: 3.125vw;
+            color: var(--cor-texto-principal);
+            border-radius: inherit;
+        }
+
+/* Seção "Projetos em recreação" */
+article.recreacao {
+    flex: 10;
+}
+
+    article.recreacao div.animacao_gol {
+        flex: 1;
+        height: calc(100vh - 100px);
+        background-color: var(--cor-animacao-gol);
+    }
+
+    article.recreacao div.sobre_recreacao {
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+    }
+
+        article.recreacao div.sobre_recreacao div.titulo_recreacao {
+            flex: 1;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-end;
+            padding: 3.125vw;
+            background-color: var(--cor-titulo-recreacao);
+            color: var(--cor-texto-principal);
+            margin: 0;
+            border-radius: inherit;
+        }
+
+        article.recreacao div.sobre_recreacao div.descricao_recreacao {
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            background-color: var(--cor-descricao-recreacao);
+            padding: 3.125vw;
+            color: var(--cor-texto-principal);
+            border-radius: inherit;
+        }
+
+/* Seção "Contato" */
+section#contato {
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    text-align: center;
+}
+
+article.contato {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: inherit;
+}
+
+    article.contato div.titulo_contato {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        background-color: transparent; /* Removido cor */
+        border-radius: inherit;
+    }
+
+    article.contato div.descricao_contato {
+        flex: 9;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        background-color: var(--cor-fundo-contato);
+        border-radius: inherit;
+    }
+
+        article.contato div.descricao_contato div.texto_descricao_contato {
+            flex: 1;
+            justify-content: center;
+            background-color: var(--cor-texto-contato);
+            border-radius: inherit;
+        }
+
+        article.contato div.descricao_contato div.logo_redesocial {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 2rem;
+            border-radius: inherit;
+        }
+
+            article.contato div.descricao_contato div.logo_redesocial a {
+                display: block;
+                text-align: center;
+                text-decoration: none;
+                color: var(--cor-link-rodape);
+            }
+
+                article.contato div.descricao_contato div.logo_redesocial a img {
+                    display: block;
+                    margin: 0 auto 0.5rem auto;
+                    width: 50px;
+                    height: 50px;
+                    object-fit: contain;
+                }
+
+/* Estilos para telas menores (Mobile) */
+@media only screen and (max-width: 768px) {
+    html,
+    body {
+        font-size: 15px; /* Reduz a fonte global */
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    h2,
+    h4 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 15px;
+    }
+
+    nav ul li {
+        margin-left: 13.5px;
+    }
+
+    article {
+        flex-direction: column;
+        height: auto; /* Altura automática para se ajustar ao conteúdo */
+    }
+
+    div.image,
+    div.animacao_gol,
+    div.animacao_pc,
+    div.animacao_livro {
+        display: none; /* Oculta as animações em telas menores */
+    }
+
+    article.educacao,
+    article.desenvolvimento,
+    article.recreacao {
+        flex-direction: column;
+    }
+
+    div.sobre_educacao,
+    div.sobre_desenvolvimento,
+    div.sobre_recreacao {
+        height: auto;
+    }
+
+    section {
+        min-height: 100vh;
+        overflow: visible; /* Permite scroll dentro da seção se necessário */
+        padding-top: 0; /* Remove o padding superior para melhor visualização */
+    }
+
+    article.sobre {
+        flex-direction: column; /* Empilha os elementos no "Sobre" */
+        height: auto;
+    }
+
+        article.sobre div.image {
+            display: block; /* Mostra a imagem no mobile */
+            flex-basis: auto;
+            height: 56vh;
+            width: 100%;
+        }
+
+        article.sobre div.text_about {
+            height: auto;
+        }
+
+            article.sobre div.text_about h1 {
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                padding: 1rem;
+            }
+
+        article.sobre div.description {
+            align-items: center;
+            text-align: center;
+            padding: 1rem;
+        }
+
+    article.projetos_titulo {
+        height: auto; /* Ajusta a altura do título dos projetos */
+        padding: 1rem;
+        text-align: center;
+    }
+
+    article.educacao div.sobre_educacao div.titulo,
+    article.educacao div.sobre_educacao div.descricao,
+    article.desenvolvimento div.sobre_desenvolvimento div.titulo_dev,
+    article.desenvolvimento div.sobre_desenvolvimento div.descricao_dev,
+    article.recreacao div.sobre_recreacao div.titulo_recreacao,
+    article.recreacao div.sobre_recreacao div.descricao_recreacao {
+        align-items: center;
+        text-align: center;
+        padding: 1rem;
+    }
+
+    article.contato div.descricao_contato div.logo_redesocial {
+        margin-top: 1rem;
+        gap: 0.25rem;
+    }
+
+        article.contato div.descricao_contato div.logo_redesocial a img {
+            width: 40px;
+            height: 40px;
+        }
+}
